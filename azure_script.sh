@@ -123,3 +123,11 @@ az network nic ip-config address-pool add \
 --nic-name "${vm2name}VMNic" \
 --resource-group ${rgname} \
 --lb-name MyLB
+
+az keyvault create \
+--resource-group ${rgname} \
+--name "${rgname}MyKeyVault" \
+--location eastus \
+--sku Standard
+
+az keyvault secret set --name PRK --vault-name "${rgname}MyKeyVault" --file ~/.ssh/id_rsa
