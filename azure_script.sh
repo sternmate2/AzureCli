@@ -124,6 +124,8 @@ az network nic ip-config address-pool add \
 --resource-group ${rgname} \
 --lb-name MyLB
 
+# create KeyVaukt Under ${rgname} resource group
+
 az keyvault create \
 --resource-group ${rgname} \
 --name "${rgname}MyKeyVault" \
